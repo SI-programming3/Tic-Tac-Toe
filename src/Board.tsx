@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./Board.module.css";
+/** @jsx jsx */
+import { css, jsx } from "@emotion/core";
 import { Square } from "./Square";
 
 interface Props {
@@ -13,7 +13,15 @@ function Board(props: Props) {
     <div>
       {[0, 3, 6].map((i) => {
         return (
-          <div className={styles.board_row}>
+          <div
+            css={css`
+              &:after {
+                lear: both;
+                content: "";
+                display: table;
+              }
+            `}
+          >
             {[i, i + 1, i + 2].map((j) => (
               <Square
                 value={props.squares[j]}

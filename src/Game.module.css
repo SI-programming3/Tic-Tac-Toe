@@ -3,10 +3,6 @@ body {
   margin: 20px;
 }
 
-.status {
-  margin-bottom: 10px;
-}
-
 .game {
   display: flex;
   flex-direction: row;

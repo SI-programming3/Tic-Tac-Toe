@@ -1,8 +1,9 @@
+/** @jsx jsx */
 import React from "react";
 import Board from "./Board";
 import { calculateWinner } from "./calculateWinner";
 import { MoveList } from "./MoveList";
-import styles from "./Game.module.css";
+import { css, jsx } from "@emotion/core";
 
 const { useState } = React;
 const initialHistory = [
@@ -63,7 +64,14 @@ function Game() {
   }
 
   return (
-    <div className={styles.game}>
+    <div
+      css={css`
+        font: 14px "Century Gothic", Futura, sans-serif;
+        margin: 20px;
+        display: flex;
+        flex-direction: row;
+      `}
+    >
       <div>
         <Board
           squares={current.squares}
@@ -71,7 +79,11 @@ function Game() {
           onClick={(i: number) => handleClick(i)}
         />
       </div>
-      <div className={styles.game_info}>
+      <div
+        css={css`
+          margin-left: 20px;
+        `}
+      >
         <div>{status}</div>
         <div>{cr}</div>
         <div>{sort}</div>

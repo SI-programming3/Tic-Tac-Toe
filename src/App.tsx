@@ -1,10 +1,14 @@
-import React from "react";
-import styles from "./App.module.css";
+/** @jsx jsx */
+import { css, jsx } from "@emotion/core";
 import Game from "./Game";
 
 function App() {
   return (
-    <div className={styles.App}>
+    <div
+      css={css`
+        text-align: center;
+      `}
+    >
       <Game />
     </div>
   );

@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./MoveList.module.css";
+/** @jsx jsx */
+import { css, jsx } from "@emotion/core";
 
 interface Props {
   steps: number;
@@ -11,7 +11,12 @@ interface Props {
 export function MoveList(props: Props) {
   const { steps, toggle, stepNumber, onMoveButtonClick } = props;
   return (
-    <ol className={styles.movelist} reversed={toggle}>
+    <ol
+      css={css`
+        padding-left: 30px;
+      `}
+      reversed={toggle}
+    >
       {[...Array(steps)].map((_, i) => {
         const n = toggle ? steps - 1 - i : i;
         let desc = n ? "Go to move #" + n : "Go to game start";
